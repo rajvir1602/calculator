@@ -30,6 +30,18 @@
         
         </style>
 
+        <script type="text/javascript">
+        	function fun() {
+        		try{
+        			var x = eval(forms.answer.value);
+        			forms.answer.value = x;
+        		}
+        		catch(err){
+        			forms.answer.value = "Error";	
+        		}
+        	}
+        </script>
+
     </head>
     <body>
         <div class="formstyle">
@@ -54,7 +66,7 @@
                 <br>
                 <input type="button" value="*"  onclick="forms.answer.value += '*'">
                 <input type="button" value="/"  onclick="forms.answer.value += '/'">
-                <input type="button" value="="  onclick="forms.answer.value =eval(forms.answer.value)">
+                <input type="button" value="="  onclick="fun()">
                 <input type="button"  value="Clear" onclick="forms.answer.value=''" id="clear_all">
                 
             </form>
